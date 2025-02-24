@@ -1,0 +1,95 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-parcelize'
+    id 'androidx.navigation.safeargs.kotlin'
+    id 'kotlin-kapt'
+}
+
+android {
+    namespace 'com.chirag.sportzassignment'
+    compileSdk 35
+
+    defaultConfig {
+        applicationId "com.chirag.sportzassignment"
+        minSdk 24
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        vectorDrawables.useSupportLibrary = true
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+    kotlinOptions {
+        jvmTarget = '11'
+    }
+    buildFeatures {
+        dataBinding true
+        viewBinding true
+        buildConfig true
+    }
+
+    testOptions {
+        unitTests.returnDefaultValues = true
+    }
+    lint {
+        checkReleaseBuilds false
+    }
+
+    testOptions.unitTests {
+        includeAndroidResources = true
+    }
+}
+
+ext {
+    supportLibraryVersion = "1.1.0"
+    intuitDimenVersion = '1.1.1'
+    retrofitVersion = "2.8.1"
+    core_version = "1.6.0"
+    lifecycle_version = '2.7.0'
+}
+
+dependencies {
+
+    implementation 'androidx.appcompat:appcompat:1.7.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'com.google.android.material:material:1.12.0'
+    implementation 'androidx.legacy:legacy-support-core-utils:1.0.0'
+
+    implementation 'com.squareup.retrofit2:retrofit:2.11.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.11.0'
+    implementation(platform('com.squareup.okhttp3:okhttp-bom:4.12.0'))
+    implementation("com.squareup.okhttp3:okhttp")              // No version!
+    implementation("com.squareup.okhttp3:okhttp-urlconnection")
+    implementation 'com.squareup.retrofit2:adapter-rxjava:2.11.0'
+
+    implementation 'androidx.recyclerview:recyclerview:1.4.0'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'com.github.bumptech.glide:glide:4.16.0'
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.8.7'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.8.7'
+
+    implementation 'junit:junit:4.13.2'
+    testImplementation 'junit:junit:4.13.2'
+    implementation 'androidx.constraintlayout:constraintlayout:2.2.0'
+    implementation 'androidx.test:core-ktx:1.6.1'
+    implementation 'androidx.test.ext:junit-ktx:1.2.1'
+    implementation 'androidx.activity:activity-ktx:1.10.0'
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.23'
+
+    //Scalable dp and sp
+    implementation "com.intuit.sdp:sdp-android:$intuitDimenVersion"
+    implementation "com.intuit.ssp:ssp-android:$intuitDimenVersion"
+}

@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Sportz Interactive</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="cancel">Cancel</string>
+    <string name="retry">Retry</string>
+
+
+    <string name="failed_to_connect_with_server">Failed to connect with server!</string>
+    <string name="no_internet_connection">No internet connection!</string>
+    <string name="something_went_wrong">Oh no, something went wrong!</string>
+    <string name="loading">Loading...</string>
+
+    <string name="series_title">Series</string>
+    <string name="teams_title">Teams</string>
+    <string name="no_team_is_selected">No Team is selected</string>
+    <string name="failed_to_load_data_error">Failed to load list. Please try again after some time</string>
+
+</resources>
